@@ -1,0 +1,68 @@
+<!--
+  Generated template for the IndexPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <!--<ion-title>index</ion-title>-->
+    <button ion-button color="gray" style="width:270px;height:30px;margin-left:25px" (click)="jumpToSearch()">
+      <ion-icon name="search"></ion-icon>
+      搜索菜谱、食材
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!--显示轮播图-->
+  <ion-slides style="height:150px;width:100%" *ngIf="carouselItems.length>0" autoplay="2000" pager effect="fade" loop="true">
+    <ion-slide *ngFor="let item of carouselItems">
+      <img [src]="'assets/'+item.img" (click)="jumpToMenuList(1)"/>
+    </ion-slide>
+  </ion-slides>
+  
+
+  <!--显示菜单样式-->
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3>
+        <button ion-button clear color="dark" (click)="jumpToMenuList(1)">营养</button>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button clear color="dark" (click)="jumpToMenuList(1)">益智</button>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button clear color="dark" (click)="jumpToMenuList(1)">增高</button>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button clear color="dark" (click)="jumpToMenuList(1)">免疫力</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-3>
+        <button ion-button clear color="dark" (click)="jumpToMenuList(1)">早餐</button>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button clear color="dark" (click)="jumpToMenuList(1)">视力</button>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button clear color="dark" (click)="jumpToMenuList(1)">开胃</button>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button clear color="dark" (click)="jumpToMenuList(1)">更多</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <hr>
+  <div class="card-background-page" *ngIf="myMenuItems.length>0" (click)="jumpToMenuList(1)">
+    <ion-card *ngFor="let menuItem of myMenuItems">
+      <img [src]="'assets/'+menuItem.img"/>
+      <div class="card-title">{{menuItem.title}}</div>
+      <div class="card-subtitle">{{menuItem.menu_detail}}</div>
+    </ion-card>
+  </div>
+</ion-content>

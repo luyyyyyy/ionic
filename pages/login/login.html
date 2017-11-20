@@ -1,0 +1,34 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+      <ion-title>登录我的菜谱</ion-title>
+      <ion-buttons end>
+        <button ion-button color="danger" style="font-size:0.5em" (click)="jumpToRegister()">
+          注册
+        </button>
+      </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-input type="text" placeholder="请输入用户名" style="width:100%;background:#FDFDFD" [(ngModel)]="userName"></ion-input>
+  <ion-input type="text" placeholder="请输入密码" style="width:100%;background:#FDFDFD;margin-top:10px" [(ngModel)]="userPwd"></ion-input>
+  <button ion-button block color="danger" style="margin-top:20px" (click)="toDoLogin()">登录</button>
+  <button ion-button block clear small style="font-size:0.5em;color:#ccc">忘记密码？</button>
+  <div>
+    <a href="#" style="text-decoration:none">
+      <img src="assets/img/user-center/QQ_login@3x.png" style="width:10%;margin-left:35%;margin-top:15px">      
+    </a>
+    <a href="#" style="text-decoration:none">
+      <img src="assets/img/user-center/weibo_login@3x.png" style="width:10%;margin-left:5%;margin-top:15px">
+    </a>
+  </div>
+</ion-content>

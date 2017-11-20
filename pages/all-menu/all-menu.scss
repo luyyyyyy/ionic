@@ -1,0 +1,47 @@
+page-all-menu {
+p,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd,li{
+    margin:0;
+    padding:0;
+}
+.allMenu {
+   text-decoration:none;
+   color:#000;
+   display:block;
+   //border:1px solid #000;
+   height:40px;
+   width:60px;
+   text-align:center;
+   line-height:40px;
+   font-size:0.3em;
+}
+.classify-menu{
+    text-decoration:none;
+    color:#555;
+    display:inline-block;
+    width:33%;
+    height:50px;
+    text-align:center;
+    font-size:0.3em;
+    line-height:50px;
+}
+li{
+    list-style:none;
+}
+.menu-left{
+    width:25%;
+    float:left;
+    background:#f5f5f5;
+    //margin-left:-15px;
+}
+.menu-right{
+    width:75%;
+    float:left;
+}
+.scroll-content{
+    //margin-top:26px !important;
+    padding:0 !important;
+}
+
+}
+
+

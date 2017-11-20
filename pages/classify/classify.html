@@ -1,0 +1,56 @@
+<!--
+  Generated template for the ClassifyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons start (click)="jumpToSearch()">
+        <button ion-button icon-only color="royal">
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>菜谱分类</ion-title>
+      <ion-buttons end>
+        <button ion-button color="dark" style="font-size:0.5em" (click)="jumpToAllMenu()">
+          全部
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding="false">
+   <div>
+       <p style="font-size:1.2em">热门分类</p>
+       <div style="width:20%;float:left;margin-right:5%;margin-bottom:20px;position:relative" *ngFor="let item of hotClassifyItems" (click)="jumpToMenuList()">
+         <img [src]="'assets/'+item.img"/>
+         <p style="position:absolute;top:-15px;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.3);text-align:center;line-height:73px;color:#fff">{{item.classify_detail}}</p>
+       </div>
+       <div style="clear:both"></div>       
+   </div>
+   <div>
+       <p style="font-size:1.2em">菜系</p>
+       <div style="width:20%;float:left;margin-right:5%;margin-bottom:20px;position:relative" *ngFor="let item of styleOfCookingItems" (click)="jumpToMenuList()">
+         <img [src]="'assets/'+item.img"/>
+         <p style="position:absolute;top:-15px;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.3);text-align:center;line-height:73px;color:#fff">{{item.classify_detail}}</p>
+       </div>
+       <div style="clear:both"></div>       
+   </div>
+   <div>
+       <p style="font-size:1.2em">热门食材</p>
+       <div style="width:20%;float:left;margin-right:5%;margin-bottom:20px;position:relative" *ngFor="let item of foodMaterialItems" (click)="jumpToMenuList()">
+         <img [src]="'assets/'+item.img"/>
+         <p style="position:absolute;top:-15px;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.3);text-align:center;line-height:73px;color:#fff">{{item.classify_detail}}</p>
+       </div>
+       <div style="clear:both"></div>       
+   </div>
+   <div>
+       <p style="font-size:1.2em">场合</p>
+       <div style="width:20%;float:left;margin-right:5%;margin-bottom:20px;position:relative" *ngFor="let item of occasionItems" (click)="jumpToMenuList()">
+         <img [src]="'assets/'+item.img"/>
+         <p style="position:absolute;top:-15px;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.3);text-align:center;line-height:73px;color:#fff">{{item.classify_detail}}</p>
+       </div>
+       <div style="clear:both"></div>      
+   </div>
+</ion-content>

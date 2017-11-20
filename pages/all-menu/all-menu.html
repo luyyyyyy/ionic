@@ -1,0 +1,47 @@
+<!--
+  Generated template for the AllMenuPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>全部</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-toolbar>
+    <ion-segment color="danger" small>
+        <ion-segment-button value="classify" (click)="showClassify()" (click)="getMenu(1,1)">
+          分类
+        </ion-segment-button>
+        <ion-segment-button value="food" (click)="showFood()" (click)="getMenu(1,2)">
+          食材
+        </ion-segment-button>       
+    </ion-segment>
+  </ion-toolbar>
+  <div>
+    <div class="menu-left">
+      <ul *ngIf="this.showType">
+        <li  *ngFor="let tmp of allMenuClassifyItems;let myIndex=index" (click)="getMenu(myIndex,1)">
+          <a href="#" class="allMenu">{{tmp.title}}</a>
+        </li>
+      </ul>
+      <ul *ngIf="!this.showType">
+        <li *ngFor="let tmp1 of allMenuFoodItems;let myIndex=index" (click)="getMenu(myIndex,2)">
+          <a href="#" class="allMenu">{{tmp1.title}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="menu-right">
+      <ul>
+        <li>
+           <a href="#" class="classify-menu" *ngFor="let temp of allMenuItems" (click)="jumpToList()">{{temp.detail}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,45 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    
+        <ion-title>注册我的菜谱</ion-title>
+        <ion-buttons end>
+          <button ion-button color="danger" style="font-size:0.5em" (click)="jumpToLogin()">
+            登录
+          </button>
+        </ion-buttons>
+  
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding style="padding:0">
+  <ion-toolbar>
+    <ion-segment color="danger" style="width:100%">
+        <ion-segment-button value="user" (click)="showUser()">
+          用户名注册
+        </ion-segment-button>
+        <ion-segment-button value="phone" (click)="showPhone()">
+          手机注册
+        </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <div *ngIf="this.userRegister">
+    <ion-input type="text" placeholder="请输入用户名" style="width:100%;background:#FDFDFD;margin-top:20px" [(ngModel)]="userName"></ion-input>
+    <ion-input type="text" placeholder="请输入密码" style="width:100%;background:#FDFDFD;margin-top:10px" [(ngModel)]="upwd"></ion-input>
+    <ion-input type="text" placeholder="请输入邮箱" style="width:100%;background:#FDFDFD;margin-top:10px" [(ngModel)]="userEmail"></ion-input>
+    <ion-input type="text" placeholder="请输入手机号" style="width:100%;background:#FDFDFD;margin-top:10px" [(ngModel)]="userPhone"></ion-input>
+  </div>
+  <div *ngIf="this.phoneRegister">
+    <ion-input type="text" placeholder="请输入手机号" style="width:72%;background:#FDFDFD;margin-top:20px;display:inline-block"></ion-input>
+    <button ion-button color="danger" small style="width:25%;display:inline-block" end>发送验证码</button>
+    <ion-input type="text" placeholder="请输入密码" style="width:100%;background:#FDFDFD;margin-top:10px"></ion-input>
+    <ion-input type="text" placeholder="请输入验证码" style="width:100%;background:#FDFDFD;margin-top:10px"></ion-input>
+  </div>
+  <button ion-button block color="danger" small style="margin-top:25px" (click)="toDoRegister()">注册</button>
+</ion-content>
